@@ -44,3 +44,9 @@ TagManager:
   - name: Pig
     uniqueID: 246136999
     locked: 0
+  - name: Ground
+    uniqueID: 2876945627
+    locked: 0
+  - name: Laser
+    uniqueID: 1733674139
+    locked: 0
