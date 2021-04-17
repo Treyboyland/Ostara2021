@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEventGeneric<T> : ScriptableObject
+public class GameEventGeneric<T> : GameEvent
 {
     [Tooltip("Value that will be sent whenever the game event is invoked")]
     [SerializeField]
@@ -24,26 +24,31 @@ public class GameEventGeneric<T> : ScriptableObject
         }
     }
 
-    List<GameEventGenericListener<T>> listeners = new List<GameEventGenericListener<T>>();
+    List<GameEventGenericListener<T>> genericListeners = new List<GameEventGenericListener<T>>();
 
     public void AddListener(GameEventGenericListener<T> toAdd)
     {
-        if (!listeners.Contains(toAdd))
+        if (!genericListeners.Contains(toAdd))
         {
-            listeners.Add(toAdd);
+            genericListeners.Add(toAdd);
         }
     }
 
     public void RemoveListener(GameEventGenericListener<T> toRemove)
     {
-        listeners.Remove(toRemove);
+        genericListeners.Remove(toRemove);
     }
 
-    public void Invoke()
+    public override void Invoke()
     {
-        foreach (var listener in listeners)
+        foreach (var listener in genericListeners)
         {
             listener.Response.Invoke(value);
+        }
+
+        foreach (var listener in listeners)
+        {
+            listener.Response.Invoke();
         }
     }
 }

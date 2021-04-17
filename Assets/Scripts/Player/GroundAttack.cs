@@ -7,6 +7,14 @@ public class GroundAttack : MonoBehaviour
     [SerializeField]
     float damagePerSecond;
 
+    public float DamagePerSecond
+    {
+        get
+        {
+            return damagePerSecond;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.LogWarning(gameObject.name + " trigger");

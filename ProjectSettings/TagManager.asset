@@ -50,3 +50,6 @@ TagManager:
   - name: Laser
     uniqueID: 1733674139
     locked: 0
+  - name: Death Particle
+    uniqueID: 3006503921
+    locked: 0

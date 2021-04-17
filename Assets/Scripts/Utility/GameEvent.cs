@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameEvent", menuName = "Events/Normal Event", order = -1)]
 public class GameEvent : ScriptableObject
 {
-    List<GameEventListener> listeners = new List<GameEventListener>();
+    protected List<GameEventListener> listeners = new List<GameEventListener>();
 
-    public void AddListener(GameEventListener toAdd)
+    public virtual void AddListener(GameEventListener toAdd)
     {
         if (!listeners.Contains(toAdd))
         {
@@ -15,12 +15,12 @@ public class GameEvent : ScriptableObject
         }
     }
 
-    public void RemoveListener(GameEventListener toRemove)
+    public virtual void RemoveListener(GameEventListener toRemove)
     {
         listeners.Remove(toRemove);
     }
 
-    public void Invoke()
+    public virtual void Invoke()
     {
         foreach (var listener in listeners)
         {
