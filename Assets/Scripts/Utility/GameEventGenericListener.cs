@@ -20,3 +20,22 @@ public class GameEventGenericListener<T> : MonoBehaviour
         gameEvent.RemoveListener(this);
     }
 }
+
+
+public class GameEventGenericListener<T,U> : MonoBehaviour
+{
+    [SerializeField]
+    GameEventGeneric<T,U> gameEvent;
+
+    public UnityEvent<T, U> Response;
+
+    private void OnEnable()
+    {
+        gameEvent.AddListener(this);
+    }
+
+    private void OnDisable()
+    {
+        gameEvent.RemoveListener(this);
+    }
+}

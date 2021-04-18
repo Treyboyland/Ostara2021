@@ -68,6 +68,16 @@ public class GroundTreeSpawner : MonoBehaviour
         }
     }
 
+    public void ForceSpawn()
+    {
+        if (trees.Count >= maxTrees)
+        {
+            return;
+        }
+
+        SpawnTree();
+    }
+
     void FindPool()
     {
         if (pool != null)

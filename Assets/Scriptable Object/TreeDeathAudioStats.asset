@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e85bdfca717b54f928691ea45e2d22, type: 3}
+  m_Name: TreeDeathAudioStats
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: a35ddc71c58613a48900de445c4ae05e, type: 3}
+  - {fileID: 8300000, guid: 7f27c8894e6b2ba43a6640dc7e3575fe, type: 3}
+  - {fileID: 8300000, guid: c99b702b5b1b71c4395aa534c06ebc51, type: 3}
+  - {fileID: 8300000, guid: c28add18652bd294d934fa4a06d1f5d0, type: 3}
+  - {fileID: 8300000, guid: 422d4283c7831744b83894c10008df1b, type: 3}
+  volumeRange: {x: 0.15, y: 0.15}
+  pitchRange: {x: 1, y: 1.1}

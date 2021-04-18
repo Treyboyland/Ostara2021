@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23cf1c18b567e444a6632295917e8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionLocation: {fileID: 0}
   OnObjectDestroyed:
     m_PersistentCalls:
       m_Calls: []
@@ -139,3 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructible: {fileID: 351966590689930686}
+  damageType: {fileID: 11400000, guid: 114dd5feab06026418350ece2b522424, type: 2}

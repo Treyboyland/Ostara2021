@@ -33,7 +33,7 @@ public class Ground : MonoBehaviour
         set
         {
             currentGrowth = value;
-            currentGrowth = Mathf.Max(Mathf.Min(stats.MaxGrowth, currentGrowth), stats.MinGrowth);
+            currentGrowth = Mathf.Max(Mathf.Min(growthValues.GrowthCutoff, currentGrowth), stats.MinGrowth);
             UpdateSprite();
         }
     }

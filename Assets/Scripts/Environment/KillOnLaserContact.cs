@@ -7,10 +7,13 @@ public class KillOnLaserContact : MonoBehaviour
     [SerializeField]
     Destructible destructible;
 
+    [SerializeField]
+    AttackType damageType;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var laser = other.GetComponent<GroundAttack>();
-        if (laser != null)
+        if (laser != null && laser.AttackType == damageType)
         {
             destructible.OnObjectDestroyed.Invoke();
         }

@@ -249,6 +249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerSecond: 30
+  currentType: {fileID: 11400000, guid: 114dd5feab06026418350ece2b522424, type: 2}
+  healType: {fileID: 11400000, guid: 8e075686ea7ed91469277825e595c77e, type: 2}
+  damageType: {fileID: 11400000, guid: 114dd5feab06026418350ece2b522424, type: 2}
 --- !u!114 &5065355222770123832
 MonoBehaviour:
   m_ObjectHideFlags: 0

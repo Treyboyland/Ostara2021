@@ -5,7 +5,7 @@ using UnityEngine;
 public class WorldSeed : MonoBehaviour
 {
     [SerializeField]
-    GameEventVector startLightRays;
+    GameEventVectorWorldSeed startLightRays;
 
     [SerializeField]
     GameEventVector startWave;
@@ -58,9 +58,17 @@ public class WorldSeed : MonoBehaviour
     {
         yield return StartCoroutine(AnimateY());
         yield return new WaitForSeconds(secondsToWaitBeforeFiring);
-        Debug.LogWarning("Fire stuff");
 
-        yield return new WaitForSeconds(secondsToWaitBeforeFiring);
+        startLightRays.Value1 = transform.position;
+        startLightRays.Value2 = (WorldSeed)this;
+
+        startLightRays.Invoke();
+    }
+
+    public void EndSeed()
+    {
+        startWave.Value = transform.position;
+        startWave.Invoke();
         gameObject.SetActive(false);
     }
 }

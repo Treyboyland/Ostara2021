@@ -15,25 +15,41 @@ public class GroundAttack : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    AttackType currentType;
+
+    public AttackType AttackType
+    {
+        get
+        {
+            return currentType;
+        }
+    }
+
+    [SerializeField]
+    AttackType healType;
+
+    [SerializeField]
+    AttackType damageType;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.LogWarning(gameObject.name + " trigger");
-        var ground = other.gameObject.GetComponent<Ground>();
-        if (ground == null)
-        {
-            return;
-        }
-        ground.CurrentGrowth -= damagePerSecond * Time.deltaTime;
+        CheckForDamage(other);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        CheckForDamage(other);
+    }
+
+    void CheckForDamage(Collider2D other)
+    {
         var ground = other.gameObject.GetComponent<Ground>();
         if (ground == null)
         {
             return;
         }
-        ground.CurrentGrowth -= damagePerSecond * Time.deltaTime;
+        ground.CurrentGrowth = ground.CurrentGrowth + (currentType == damageType ? -1 : 1) * damagePerSecond * Time.deltaTime;
     }
 
 }
